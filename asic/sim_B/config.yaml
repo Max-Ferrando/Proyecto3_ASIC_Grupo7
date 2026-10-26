@@ -1,0 +1,45 @@
+# SOLO PARA SIMULACION POST-SINTESIS (estrategia B) con el programa de
+# simulacion (CLK_HZ=20000). Correr con --to Yosys.Synthesis
+# Ejecutar desde la raiz del repositorio (ver README.md, seccion ASIC).
+
+DESIGN_NAME: asic_top
+PDK: gf180mcuD
+STD_CELL_LIBRARY: gf180mcu_fd_sc_mcu7t5v0
+
+VERILOG_FILES:
+  - dir::../../rtl/asic/asic_top.v
+  - dir::../../rtl/asic/pochoco_reset_sync.v
+  - dir::../../rtl/asic/espino_register_file_ff.v
+  - dir::../../rtl/common/pochoco_soc.v
+  - dir::../../rtl/common/pochoco_periph.v
+  - dir::../../rtl/common/pochoco_cycle_counter.v
+  - dir::../../rtl/common/pochoco_spi_slave.v
+  - dir::../../rtl/common/espino_core/espino_alu.v
+  - dir::../../rtl/common/espino_core/espino_controller.v
+  - dir::../../rtl/common/espino_core/espino_core.v
+  - dir::../../rtl/common/espino_core/espino_decoder.v
+  - dir::../../rtl/common/espino_core/espino_id_stage.v
+  - dir::../../rtl/common/espino_core/espino_if_stage.v
+  - dir::../../rtl/common/espino_core/espino_load_store_unit.v
+  - dir::../../rtl/asic/pochoco_mem_ff.v
+# game_mem.vh (tamanos de memoria / contenido inicial), generado por rvasm.py
+VERILOG_INCLUDE_DIRS:
+  - dir::../../sim/asic/gen
+
+# Reloj y parametros comunes a todos los grupos (seccion 2 del enunciado)
+CLOCK_PORT: clk_i
+CLOCK_PERIOD: 100          # ns  (T)
+FP_SIZING: relative
+FP_CORE_UTIL: 40           # %   (U)
+
+# Terminales del macro agrupados por funcion
+IO_PIN_ORDER_CFG: dir::../pin_order.cfg
+
+# Trazabilidad: se aplana todo MENOS estos modulos, para poder medir su area
+# en el reporte de sintesis y encontrar sus celdas en el layout por nombre
+# (u_soc.u_core.u_rf, u_soc.u_core.u_id.u_alu, u_soc.u_periph.u_cycle_cnt).
+SYNTH_HIERARCHY_MODE: flatten
+SYNTH_KEEP_HIERARCHY_MODULES:
+  - espino_register_file
+  - espino_alu
+  - pochoco_cycle_counter

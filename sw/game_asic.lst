@@ -1,0 +1,280 @@
+                    # =============================================================================
+                    # game.s - Juego de reflejos para el Pochoco SoC / Espino Core (RV32E)
+                    # Proyecto 2 - Arquitectura de Computadores 2026-2
+                    #
+                    # Generar game.hex:   python3 tools/rvasm.py sw/game.s -o sw/game.hex
+                    #
+                    # Mapa de memoria usado (base de perifericos 0x8000_0000):
+                    #   +0x00  display 7 segmentos (byte: nibble alto = digito izq., bajo = der.)
+                    #   +0x04  LEDs (bits 3..0)
+                    #   +0x08  botones (bits 3..0, sincronizados, 1 = presionado)
+                    #   +0x0C  contador de ciclos de 32 bits (agregado en pochoco_periph.v)
+                    #
+                    # Restricciones del core: solo x0..x15, sin MUL/DIV y los shifts se ejecutan
+                    # como ADD. Por eso: x*16 se hace con 4 sumas x+x, las divisiones con restas
+                    # sucesivas y los bits se extraen con mascaras (and) en vez de shifts.
+                    #
+                    # Uso de registros "globales" (no los toca ninguna subrutina):
+                    #   s0 = base de perifericos        s1 = rondas correctas acumuladas
+                    #   tp = suma de ciclos de las rondas correctas
+                    #   gp = estado del generador pseudoaleatorio
+                    #   a5 = mascara del LED objetivo    a4 = ciclo de inicio de la medicion
+                    #   a2 = contador auxiliar del programa principal
+                    # Las subrutinas pueden modificar: t0, t1, t2, a0, a1, a3.
+                    # =============================================================================
+                    
+                    # ----------------------------- Constantes ------------------------------------
+                    # Solo CLK_HZ depende de la placa; todo lo demas se deriva de ella.
+                    # (En simulacion se sobreescribe con: rvasm.py -D CLK_HZ=20000)
+                    .equ CLK_HZ,      25000000              # reloj de la Go Board: 25 MHz
+                    .equ TENTH,       CLK_HZ / 10           # ciclos por decima de segundo (2.500.000)
+                    .equ HALF_TENTH,  TENTH / 2             # para redondear al entero mas cercano
+                    .equ ALL_ON_TIME, 30 * TENTH            # fase inicial: 3,0 s con los 4 LEDs
+                    .equ NUM_ROUNDS,  10                    # respuestas correctas por partida
+                    .equ MAX_TENTHS,  99                    # el display solo muestra 2 digitos
+                    .equ MAX_CYCLES,  MAX_TENTHS * TENTH    # saturacion por ronda (9,9 s)
+                    .equ DEBOUNCE,    TENTH / 5             # 20 ms sin botones = liberado
+                    .equ BLINK_TIME,  TENTH * 3 / 2         # 150 ms por parpadeo de error
+                    .equ ERR_BLINKS,  3                     # parpadeos al equivocarse
+                    .equ IDLE_STEP,   2 * TENTH             # paso de la animacion de espera
+                    .equ ERR_CODE,    0xEE                  # "EE" en el display = error
+                    .equ LCG_INC,     12345                 # incremento (impar) del LCG
+                    
+                    .equ PERIPH,      0x80000000
+                    .equ SEG_OFF,     0x00
+                    .equ LED_OFF,     0x04
+                    .equ BTN_OFF,     0x08
+                    .equ CYC_OFF,     0x0C
+                    
+                    .text
+                    .global _start
+                    
+                    # ============================ Programa principal =============================
+                    _start:
+00000000  80000437      li   s0, PERIPH                 # s0 = 0x8000_0000
+00000004  000011b7      li   gp, 0x1234                 # semilla inicial (luego se mezcla con tiempos humanos)
+00000008  23418193  
+                    
+                    # --- Pantalla de espera: LEDs en "carrusel" hasta que se presione un boton ---
+                    # Sirve para sembrar el generador: el ciclo exacto en que la persona
+                    # presiona es impredecible, asi cada partida tiene una secuencia distinta.
+                    new_game:
+0000000c  00042023      sw   zero, SEG_OFF(s0)          # display "00"
+00000010  00100613      li   a2, 1                      # LED actual del carrusel
+                    idle_loop:
+00000014  00c42223      sw   a2, LED_OFF(s0)
+00000018  001e8537      li   a0, IDLE_STEP
+0000001c  48050513  
+00000020  154000ef      jal  ra, wait_or_press          # a0 = botones (0 si se cumplio el tiempo)
+00000024  00051c63      bnez a0, idle_pressed
+00000028  00c60633      add  a2, a2, a2                 # siguiente LED (x2, sin usar shifts)
+0000002c  01000293      li   t0, 16
+00000030  fe5612e3      bne  a2, t0, idle_loop
+00000034  00100613      li   a2, 1
+00000038  fddff06f      j    idle_loop
+                    idle_pressed:
+0000003c  00c42283      lw   t0, CYC_OFF(s0)
+00000040  0051c1b3      xor  gp, gp, t0                 # semilla <- semilla XOR contador de ciclos
+00000044  158000ef      jal  ra, wait_release
+00000048  00000493      li   s1, 0                      # rondas correctas = 0
+0000004c  00000213      li   tp, 0                      # suma de ciclos = 0
+                    
+                    # --- Inicio de ronda (tambien se vuelve aqui tras un error) ------------------
+                    round_start:
+00000050  00f00293      li   t0, 15
+00000054  00542223      sw   t0, LED_OFF(s0)            # 1) los cuatro LEDs encendidos
+00000058  01c9c537      li   a0, ALL_ON_TIME
+0000005c  38050513  
+00000060  100000ef      jal  ra, delay                  #    durante 3,0 s medidos con el contador
+00000064  138000ef      jal  ra, wait_release           #    (si alguien mantiene un boton, se espera)
+                    
+00000068  158000ef      jal  ra, rand_led               # 2) a5 = LED objetivo (1, 2, 4 u 8)
+0000006c  00f42223      sw   a5, LED_OFF(s0)            #    solo el LED objetivo encendido
+00000070  00c42703      lw   a4, CYC_OFF(s0)            # 3) inicio de la medicion (instruccion siguiente)
+                    
+                    wait_press:                         # 4) esperar una pulsacion
+00000074  00c42583      lw   a1, CYC_OFF(s0)            #    se lee el contador ANTES de los botones:
+00000078  00842503      lw   a0, BTN_OFF(s0)            #    si a0 != 0, a1 es el instante de la pulsacion
+0000007c  fe050ce3      beqz a0, wait_press
+                    
+00000080  40e585b3      sub  a1, a1, a4                 # a1 = ciclos transcurridos (sin signo)
+00000084  00b181b3      add  gp, gp, a1                 # mezcla el tiempo de reaccion en la semilla
+00000088  08f51c63      bne  a0, a5, wrong_button       # boton distinto (o varios) = error
+                    
+                        # --- respuesta correcta ---
+0000008c  05e6a2b7      li   t0, MAX_CYCLES
+00000090  ec028293  
+00000094  0055e463      bltu a1, t0, no_sat
+00000098  00028593      mv   a1, t0                     # satura en 9,9 s para no desbordar la suma
+                    no_sat:
+0000009c  00b20233      add  tp, tp, a1                 # acumula para el promedio
+000000a0  0007a2b7      li   t0, HALF_TENTH
+000000a4  12028293  
+000000a8  00558533      add  a0, a1, t0                 # a0 = ciclos + medio paso (redondeo)
+000000ac  000f45b7      li   a1, TENTH
+000000b0  24058593  
+000000b4  158000ef      jal  ra, udiv                   # a0 = decimas = (ciclos + TENTH/2) / TENTH
+000000b8  170000ef      jal  ra, to_bcd                 # a0 = dos digitos decimales
+000000bc  00a42023      sw   a0, SEG_OFF(s0)            # 5) mostrar tiempo en decimas
+000000c0  0dc000ef      jal  ra, wait_release
+                    
+000000c4  00148493      addi s1, s1, 1                  # 6) una respuesta correcta mas
+000000c8  00a00293      li   t0, NUM_ROUNDS
+000000cc  f854c2e3      blt  s1, t0, round_start
+                    
+                        # --- 7) promedio de las 10 rondas ---
+                        # promedio[decimas] = (suma_ciclos / NUM_ROUNDS) / TENTH
+                        #                   = suma_ciclos / (NUM_ROUNDS * TENTH), redondeado
+000000d0  004c52b7      li   t0, NUM_ROUNDS * TENTH / 2
+000000d4  b4028293  
+000000d8  00520533      add  a0, tp, t0
+000000dc  009895b7      li   a1, NUM_ROUNDS * TENTH
+000000e0  68058593  
+000000e4  128000ef      jal  ra, udiv
+000000e8  140000ef      jal  ra, to_bcd
+000000ec  00a42023      sw   a0, SEG_OFF(s0)
+                    
+                        # Pantalla final: LEDs alternan 0101/1010 hasta presionar -> nueva partida
+000000f0  00500613      li   a2, 5
+                    end_loop:
+000000f4  00c42223      sw   a2, LED_OFF(s0)
+000000f8  001e8537      li   a0, IDLE_STEP
+000000fc  48050513  
+00000100  074000ef      jal  ra, wait_or_press
+00000104  00051663      bnez a0, end_pressed
+00000108  00f64613      xori a2, a2, 15                 # 0101 <-> 1010
+0000010c  fe9ff06f      j    end_loop
+                    end_pressed:
+00000110  00c42283      lw   t0, CYC_OFF(s0)
+00000114  0051c1b3      xor  gp, gp, t0
+00000118  084000ef      jal  ra, wait_release
+0000011c  ef1ff06f      j    new_game
+                    
+                    # --- 8) Boton incorrecto: "EE" + parpadeo, y se repite la ronda actual -------
+                    # s1 y tp NO se modifican: las rondas correctas acumuladas se conservan.
+                    wrong_button:
+00000120  0ee00293      li   t0, ERR_CODE
+00000124  00542023      sw   t0, SEG_OFF(s0)
+00000128  074000ef      jal  ra, wait_release
+0000012c  00300613      li   a2, ERR_BLINKS
+                    err_loop:
+00000130  00f00293      li   t0, 15
+00000134  00542223      sw   t0, LED_OFF(s0)
+00000138  0016e537      li   a0, BLINK_TIME
+0000013c  36050513  
+00000140  020000ef      jal  ra, delay
+00000144  00042223      sw   zero, LED_OFF(s0)
+00000148  0016e537      li   a0, BLINK_TIME
+0000014c  36050513  
+00000150  010000ef      jal  ra, delay
+00000154  fff60613      addi a2, a2, -1
+00000158  fc061ce3      bnez a2, err_loop
+0000015c  ef5ff06f      j    round_start
+                    
+                    # ================================ Subrutinas =================================
+                    
+                    # delay: espera a0 ciclos usando el contador de hardware.
+                    # Usa t0, t1. Exacto sin importar cuantos ciclos tome cada instruccion.
+                    delay:
+00000160  00c42283      lw   t0, CYC_OFF(s0)            # t0 = inicio
+                    delay_loop:
+00000164  00c42303      lw   t1, CYC_OFF(s0)
+00000168  40530333      sub  t1, t1, t0                 # transcurrido = ahora - inicio
+0000016c  fea36ce3      bltu t1, a0, delay_loop
+00000170  00008067      ret
+                    
+                    # wait_or_press: espera hasta a0 ciclos o hasta que se presione un boton.
+                    # Retorna a0 = estado de botones (0 si se agoto el tiempo). Usa t0, t1, t2.
+                    wait_or_press:
+00000174  00c42283      lw   t0, CYC_OFF(s0)
+                    wop_loop:
+00000178  00842303      lw   t1, BTN_OFF(s0)
+0000017c  00031c63      bnez t1, wop_hit
+00000180  00c42383      lw   t2, CYC_OFF(s0)
+00000184  405383b3      sub  t2, t2, t0
+00000188  fea3e8e3      bltu t2, a0, wop_loop
+0000018c  00000513      li   a0, 0
+00000190  00008067      ret
+                    wop_hit:
+00000194  00030513      mv   a0, t1
+00000198  00008067      ret
+                    
+                    # wait_release: antirrebote por software. Retorna cuando todos los botones
+                    # llevan DEBOUNCE ciclos seguidos sin presionar. Usa t0, t1, t2, a3.
+                    wait_release:
+0000019c  000316b7      li   a3, DEBOUNCE
+000001a0  d4068693  
+                    wr_restart:
+000001a4  00c42283      lw   t0, CYC_OFF(s0)            # reinicia la ventana de tiempo
+                    wr_loop:
+000001a8  00842303      lw   t1, BTN_OFF(s0)
+000001ac  fe031ce3      bnez t1, wr_restart             # algun boton sigue presionado (o rebotando)
+000001b0  00c42383      lw   t2, CYC_OFF(s0)
+000001b4  405383b3      sub  t2, t2, t0
+000001b8  fed3e8e3      bltu t2, a3, wr_loop
+000001bc  00008067      ret
+                    
+                    # rand_led: avanza el LCG gp = 5*gp + LCG_INC + contador y devuelve en a5 un
+                    # LED objetivo (1, 2, 4 u 8) segun los bits 17 y 16 de gp.
+                    # Se usan bits altos porque en un LCG modulo 2^32 los bits bajos tienen
+                    # periodo muy corto. Sin shifts: los bits se prueban con mascaras.
+                    # Usa t0, t1.
+                    rand_led:
+000001c0  003182b3      add  t0, gp, gp                 # 2*gp
+000001c4  005282b3      add  t0, t0, t0                 # 4*gp
+000001c8  003281b3      add  gp, t0, gp                 # 5*gp
+000001cc  000032b7      li   t0, LCG_INC
+000001d0  03928293  
+000001d4  005181b3      add  gp, gp, t0
+000001d8  00c42283      lw   t0, CYC_OFF(s0)
+000001dc  005181b3      add  gp, gp, t0                 # + entropia del contador de ciclos
+000001e0  00100793      li   a5, 1
+000001e4  00010337      lui  t1, 0x10                   # t1 = 0x0001_0000 (bit 16)
+000001e8  0061f2b3      and  t0, gp, t1
+000001ec  00028463      beqz t0, rl_bit17
+000001f0  00f787b3      add  a5, a5, a5                 # bit16 = 1 -> x2
+                    rl_bit17:
+000001f4  00630333      add  t1, t1, t1                 # t1 = 0x0002_0000 (bit 17)
+000001f8  0061f2b3      and  t0, gp, t1
+000001fc  00028663      beqz t0, rl_done
+00000200  00f787b3      add  a5, a5, a5                 # bit17 = 1 -> x4
+00000204  00f787b3      add  a5, a5, a5
+                    rl_done:
+00000208  00008067      ret
+                    
+                    # udiv: division entera sin signo por restas sucesivas.
+                    # Entrada a0 = dividendo, a1 = divisor (> 0). Salida a0 = cociente.
+                    # Aqui el cociente es a lo mas 99, asi que son como maximo 99 iteraciones.
+                    # Usa t0.
+                    udiv:
+0000020c  00000293      li   t0, 0
+                    udiv_loop:
+00000210  00b56863      bltu a0, a1, udiv_done
+00000214  40b50533      sub  a0, a0, a1
+00000218  00128293      addi t0, t0, 1
+0000021c  ff5ff06f      j    udiv_loop
+                    udiv_done:
+00000220  00028513      mv   a0, t0
+00000224  00008067      ret
+                    
+                    # to_bcd: convierte a0 (0..99, se satura en 99) a dos digitos decimales
+                    # para el display: a0 = decenas*16 + unidades. Usa t0, t1.
+                    to_bcd:
+00000228  06300293      li   t0, MAX_TENTHS
+0000022c  00a2f463      bgeu t0, a0, bcd_ok
+00000230  00028513      mv   a0, t0
+                    bcd_ok:
+00000234  00000313      li   t1, 0                      # decenas
+00000238  00a00293      li   t0, 10
+                    bcd_loop:
+0000023c  00556863      bltu a0, t0, bcd_pack
+00000240  ff650513      addi a0, a0, -10
+00000244  00130313      addi t1, t1, 1
+00000248  ff5ff06f      j    bcd_loop
+                    bcd_pack:
+0000024c  00630333      add  t1, t1, t1                 # decenas * 2
+00000250  00630333      add  t1, t1, t1                 # decenas * 4
+00000254  00630333      add  t1, t1, t1                 # decenas * 8
+00000258  00630333      add  t1, t1, t1                 # decenas * 16  (equivale a << 4)
+0000025c  00a30533      add  a0, t1, a0
+00000260  00008067      ret

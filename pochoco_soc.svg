@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="800"
+   viewBox="0 0 800 650"
+   style="font-family:Arial, sans-serif"
+   version="1.1"
+   id="svg59"
+   sodipodi:docname="pochoco_soc.svg"
+   height="650"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo1MGJlZWYxNC1mMmY1LTQyMTEtODdjYy1iZDM0NzI1OGMyNDYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaPtS16MzcLzS+lZX5on09EQAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDozNTkzN2U0Mi03MmM0LTQ3MjktODhhYi02MTYxZDgwZDM1YWJscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo93yPVfNOcYiLKOOsQ9JtfgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg6Qx237qv1DV6+Q1l8AujKWUijlfqsMxNUMHDXC8Y46ukZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaPXuvkx8d0pojEVB6zqcf8cAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIMjJZtcv2SPsFTRxW5G9zfzIcwF3055sFBqXwJb8LoHGZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQIrZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjUwYmVlZjE0LWYyZjUtNDIxMS04N2NjLWJkMzQ3MjU4YzI0Ni9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjJhMGI5NjQ0LWZiMjQtNDQ2ZC05M2QzLTljM2ZjMGVlNzAwNnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDpDHbfuq/UNXr5DWXwC6MpZSKOV+qwzE1QwcNcLxjjq6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggETf9t9b8Y5WuDe8TA7nep292TGWJVDH4SGWhe4W9wVOiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggIdpNua9Dh5JmN1AH+CeatOf4oqmXsImuXKOPy1r+9C90Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQBBuzujO3ehXHe+CeKrqsHDPkwtaQr7YX+XkhMu/q8yt3Kd93xiwIIKWeoP/gvCIpdD2DDRwRZ4CqSy1+AgGRF4=</c2pa:manifest></metadata>
+  <sodipodi:namedview
+     id="namedview59"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     labelstyle="default"
+     inkscape:zoom="0.96989815"
+     inkscape:cx="276.83319"
+     inkscape:cy="453.65588"
+     inkscape:window-width="1904"
+     inkscape:window-height="921"
+     inkscape:window-x="1440"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g59" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker87"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path87" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <!-- Sharp, classic arrowhead for dataflow -->
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse"
+       preserveAspectRatio="xMidYMid">
+      <path
+         d="M 0,1 8,5 0,9 Z"
+         fill="#915f02"
+         id="path1" />
+    </marker>
+  </defs>
+  <!-- SoC Outer Domain -->
+  <g
+     id="g82"
+     inkscape:label="Pochoco SoC">
+    <rect
+       x="14.582352"
+       y="9.8611832"
+       width="768.27765"
+       height="595.98865"
+       rx="4.7037416"
+       fill="#fcfdfa"
+       stroke="#6a7353"
+       stroke-width="1.72236"
+       id="rect1"
+       inkscape:label="Background" />
+    <text
+       x="29.721169"
+       y="30"
+       fill="#3b421e"
+       font-size="14px"
+       font-weight="bold"
+       id="text1"
+       inkscape:label="Title">pochoco_soc</text>
+    <g
+       id="g81"
+       inkscape:label="Espino Core"
+       style="font-family:Arial, sans-serif"
+       transform="translate(4.7211687)">
+      <rect
+         x="24.910215"
+         y="44.910217"
+         width="735.75482"
+         height="325.1796"
+         rx="3.0979149"
+         fill="#ebefe5"
+         stroke="#3b421e"
+         stroke-width="1.32043"
+         id="rect2"
+         inkscape:label="Background"
+         style="stroke-width:1.32;stroke-dasharray:none" />
+      <text
+         x="40"
+         y="65"
+         fill="#3b421e"
+         font-size="14px"
+         font-weight="bold"
+         id="text2"
+         inkscape:label="Title">espino_core</text>
+      <g
+         id="g80"
+         inkscape:label="IF Stage"
+         style="font-family:Arial, sans-serif">
+        <rect
+           x="39.959156"
+           y="79.959396"
+           width="190.0817"
+           height="231.93428"
+           rx="3.0012898"
+           fill="none"
+           stroke="#6a7353"
+           stroke-width="0.918564"
+           stroke-dasharray="5, 5"
+           id="rect3"
+           inkscape:label="Border" />
+        <text
+           x="48"
+           y="95"
+           fill="#6a7353"
+           font-size="12px"
+           font-style="italic"
+           id="text3"
+           inkscape:label="Title">espino_if_stage</text>
+        <g
+           id="g68"
+           inkscape:label="Next-PC Selector"
+           style="font-family:Arial, sans-serif">
+          <rect
+             x="70"
+             y="105"
+             width="80"
+             height="30"
+             rx="3"
+             fill="#acb8a8"
+             stroke="#6a7353"
+             stroke-width="1.5"
+             id="rect32" />
+          <text
+             x="110"
+             y="120"
+             fill="#3b421e"
+             font-size="12px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text32">Next-PC mux</text>
+        </g>
+        <g
+           id="g67"
+           inkscape:label="PC Reg"
+           style="font-family:Arial, sans-serif">
+          <rect
+             x="70"
+             y="165"
+             width="80"
+             height="30"
+             rx="3"
+             fill="#a2a95b"
+             stroke="#3b421e"
+             stroke-width="1.5"
+             id="rect33" />
+          <text
+             x="110"
+             y="180"
+             fill="#ffffff"
+             font-size="12px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text33">PC register</text>
+        </g>
+      </g>
+      <g
+         id="g79"
+         inkscape:label="ID Stage"
+         style="font-family:Arial, sans-serif">
+        <rect
+           x="259.93167"
+           y="79.931915"
+           width="484.98474"
+           height="232.5885"
+           rx="2.6453714"
+           fill="none"
+           stroke="#6a7353"
+           stroke-width="0.863596"
+           stroke-dasharray="5, 5"
+           id="rect4"
+           inkscape:label="Border" />
+        <text
+           x="268"
+           y="95"
+           fill="#6a7353"
+           font-size="12px"
+           font-style="italic"
+           id="text4"
+           inkscape:label="Title">espino_id_stage</text>
+        <g
+           id="g70"
+           inkscape:label="Decoder"
+           style="font-family:Arial, sans-serif">
+          <rect
+             x="290"
+             y="105"
+             width="100"
+             height="40"
+             rx="3"
+             fill="#acb8a8"
+             stroke="#6a7353"
+             stroke-width="1.5"
+             id="rect36" />
+          <text
+             x="340"
+             y="119"
+             fill="#3b421e"
+             font-size="12px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text37">Decoder</text>
+          <text
+             x="340"
+             y="133"
+             fill="#3b421e"
+             font-size="10px"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text38">espino_decoder</text>
+        </g>
+        <g
+           id="g71"
+           inkscape:label="ID FSM"
+           style="font-family:Arial, sans-serif"
+           transform="translate(0.63238105,-3.818841)">
+          <rect
+             x="290"
+             y="165"
+             width="100"
+             height="35"
+             rx="3"
+             fill="#ffdf18"
+             stroke="#ad8309"
+             stroke-width="1.5"
+             id="rect38" />
+          <text
+             x="340"
+             y="182.5"
+             fill="#3b421e"
+             font-size="12px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text39">Read-Wait FSM</text>
+        </g>
+        <g
+           id="g72"
+           inkscape:label="Register Files"
+           style="font-family:Arial, sans-serif"
+           transform="translate(0,-12.637682)">
+          <rect
+             x="290"
+             y="225"
+             width="100"
+             height="80"
+             rx="3"
+             fill="#a2a95b"
+             stroke="#3b421e"
+             stroke-width="1.5"
+             id="rect39" />
+          <text
+             x="340"
+             y="259"
+             fill="#ffffff"
+             font-size="12px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text40">Register File</text>
+          <text
+             x="340"
+             y="273"
+             fill="#ffffff"
+             font-size="10px"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text41">espino_regfile</text>
+        </g>
+        <g
+           id="g75"
+           inkscape:label="Immediate"
+           style="font-family:Arial, sans-serif">
+          <rect
+             x="420"
+             y="100"
+             width="50"
+             height="25"
+             rx="2"
+             fill="#acb8a8"
+             stroke="#6a7353"
+             stroke-width="1"
+             id="rect41" />
+          <text
+             x="445"
+             y="112.5"
+             fill="#3b421e"
+             font-size="11px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text42">Imm</text>
+        </g>
+        <g
+           id="g74"
+           inkscape:label="Reg"
+           style="font-family:Arial, sans-serif">
+          <rect
+             x="420"
+             y="135"
+             width="50"
+             height="25"
+             rx="2"
+             fill="#acb8a8"
+             stroke="#6a7353"
+             stroke-width="1"
+             id="rect42" />
+          <text
+             x="445"
+             y="147.5"
+             fill="#3b421e"
+             font-size="11px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text43">Reg</text>
+        </g>
+        <g
+           id="g73"
+           inkscape:label="PC"
+           style="font-family:Arial, sans-serif">
+          <rect
+             x="420"
+             y="170"
+             width="50"
+             height="25"
+             rx="2"
+             fill="#acb8a8"
+             stroke="#6a7353"
+             stroke-width="1"
+             id="rect43" />
+          <text
+             x="445"
+             y="182.5"
+             fill="#3b421e"
+             font-size="11px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text44">PC</text>
+        </g>
+        <g
+           id="g76"
+           inkscape:label="ALU"
+           style="font-family:Arial, sans-serif">
+          <polygon
+             points="515,155 500,145 500,100 580,115 580,195 500,210 500,165 "
+             fill="#dfbb29"
+             stroke="#ad8309"
+             stroke-width="2"
+             id="polygon44" />
+          <text
+             x="545"
+             y="155"
+             fill="#3b421e"
+             font-size="16px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text45">ALU</text>
+        </g>
+        <g
+           id="g78"
+           inkscape:label="LSU"
+           style="font-family:Arial, sans-serif"
+           transform="translate(0,-12.637682)">
+          <rect
+             x="520"
+             y="227.74979"
+             width="120"
+             height="60"
+             rx="3"
+             fill="#a2a95b"
+             stroke="#3b421e"
+             stroke-width="1.5"
+             id="rect45" />
+          <g
+             id="g1"
+             transform="translate(-0.38671875,-7.9090006)">
+            <text
+               x="580"
+               y="259"
+               fill="#ffffff"
+               font-size="12px"
+               font-weight="bold"
+               text-anchor="middle"
+               dominant-baseline="central"
+               id="text46">Load / Store Unit</text>
+            <text
+               x="580"
+               y="273"
+               fill="#ffffff"
+               font-size="10px"
+               text-anchor="middle"
+               dominant-baseline="central"
+               id="text47">espino_lsu</text>
+          </g>
+        </g>
+        <g
+           id="g77"
+           inkscape:label="Writeback Mux"
+           style="font-family:Arial, sans-serif">
+          <rect
+             x="670"
+             y="105"
+             width="40"
+             height="170"
+             rx="3"
+             fill="#acb8a8"
+             stroke="#6a7353"
+             stroke-width="1.5"
+             id="rect47" />
+          <text
+             x="-190"
+             y="690"
+             fill="#3b421e"
+             font-size="12px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             transform="rotate(-90)"
+             id="text48">Writeback Mux</text>
+        </g>
+      </g>
+      <g
+         id="g66"
+         inkscape:label="Controller"
+         style="font-family:Arial, sans-serif"
+         transform="translate(201.73289,76.313465)">
+        <rect
+           x="70.335411"
+           y="245.3354"
+           width="170.41156"
+           height="39.329182"
+           rx="6.3904338"
+           fill="#ffdf18"
+           stroke="#ad8309"
+           stroke-width="2.17082"
+           id="rect34" />
+        <g
+           id="g89"
+           transform="translate(45.18084,-0.65879273)">
+          <text
+             x="110"
+             y="259"
+             fill="#3b421e"
+             font-size="12px"
+             font-weight="bold"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text34">Controller</text>
+          <text
+             x="110"
+             y="273"
+             fill="#915f02"
+             font-size="10px"
+             text-anchor="middle"
+             dominant-baseline="central"
+             id="text35">espino_ctrl</text>
+        </g>
+      </g>
+      <g
+         id="g69"
+         inkscape:label="IF/ID Register"
+         style="font-family:Arial, sans-serif">
+        <rect
+           x="219.9538"
+           y="94.953804"
+           width="30.092398"
+           height="197.52631"
+           rx="3.0092397"
+           fill="#a2a95b"
+           stroke="#3b421e"
+           stroke-width="1.4076"
+           id="rect35" />
+        <text
+           x="-193.74332"
+           y="234.79642"
+           fill="#ffffff"
+           font-size="12px"
+           font-weight="bold"
+           text-anchor="middle"
+           dominant-baseline="central"
+           transform="rotate(-90)"
+           id="text36">IF / ID Pipeline Reg</text>
+      </g>
+    </g>
+    <g
+       id="g65"
+       inkscape:label="Instruction Memory Bus"
+       style="font-family:Arial, sans-serif"
+       transform="translate(-40.278827,-29.484081)">
+      <rect
+         x="100"
+         y="385"
+         width="160"
+         height="30"
+         rx="4"
+         fill="#ad8309"
+         stroke="#915f02"
+         stroke-width="1.5"
+         id="rect48" />
+      <text
+         x="180"
+         y="400"
+         fill="#ffffff"
+         font-size="12px"
+         font-weight="bold"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text49">Instruction Memory Bus</text>
+    </g>
+    <g
+       id="g64"
+       inkscape:label="Data Memory Bus"
+       style="font-family:Arial, sans-serif"
+       transform="translate(-95.730671,-28.080077)">
+      <rect
+         x="600"
+         y="385"
+         width="160"
+         height="30"
+         rx="4"
+         fill="#ad8309"
+         stroke="#915f02"
+         stroke-width="1.5"
+         id="rect49" />
+      <text
+         x="680"
+         y="400"
+         fill="#ffffff"
+         font-size="12px"
+         font-weight="bold"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text50">Data Memory Bus</text>
+    </g>
+    <g
+       id="g63"
+       inkscape:label="Address Decode"
+       style="font-family:Arial, sans-serif"
+       transform="translate(-95.730671,-23.549924)">
+      <rect
+         x="600"
+         y="450"
+         width="160"
+         height="40"
+         rx="4"
+         fill="#acb8a8"
+         stroke="#6a7353"
+         stroke-width="1.5"
+         id="rect50" />
+      <text
+         x="680"
+         y="464"
+         fill="#3b421e"
+         font-size="12px"
+         font-weight="bold"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text51">Address Decode</text>
+      <text
+         x="680"
+         y="478"
+         fill="#3b421e"
+         font-size="10px"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text52">addr[31] MMIO, addr[16] slave</text>
+    </g>
+    <g
+       id="g62"
+       inkscape:label="RAM"
+       style="font-family:Arial, sans-serif"
+       transform="translate(-40.278827,-93.54992)">
+      <rect
+         x="100.5429"
+         y="522.12079"
+         width="158.9142"
+         height="149.30351"
+         rx="3.9728546"
+         fill="#6b6b2b"
+         stroke="#3b421e"
+         stroke-width="2.58582"
+         id="rect52" />
+      <g
+         id="g88"
+         transform="translate(-0.00585938,51.113758)">
+        <text
+           x="180"
+           y="539"
+           fill="#ffffff"
+           font-size="12px"
+           font-weight="bold"
+           text-anchor="middle"
+           dominant-baseline="central"
+           id="text53">Unified RAM</text>
+        <text
+           x="180"
+           y="553"
+           fill="#ffffff"
+           font-size="10px"
+           text-anchor="middle"
+           dominant-baseline="central"
+           id="text54">pochoco_ram</text>
+      </g>
+    </g>
+    <g
+       id="g60"
+       inkscape:label="Peripherals"
+       style="font-family:Arial, sans-serif"
+       transform="translate(4.7211687,-9.6324569)">
+      <rect
+         x="294.18115"
+         y="520.50177"
+         width="265.31708"
+         height="67.689751"
+         rx="7.5804873"
+         fill="#6b6b2b"
+         stroke="#3b421e"
+         stroke-width="2.60704"
+         id="rect54"
+         style="fill:#ebefe5;fill-opacity:1;stroke-width:1.2165;stroke-dasharray:none" />
+      <text
+         x="350.37372"
+         y="532.99023"
+         fill="#ffffff"
+         font-size="10px"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text56"
+         style="font-size:12px"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';fill:#3b421e;fill-opacity:1"
+           id="tspan90">pochoco_periph</tspan></text>
+      <g
+         id="g90"
+         inkscape:label="LEDs"
+         transform="translate(50.031396,1.7868356)">
+        <rect
+           x="255.09526"
+           y="545.13513"
+           width="73.317299"
+           height="32.753086"
+           rx="2.0947802"
+           fill="#6b6b2b"
+           stroke="#3b421e"
+           stroke-width="0.878561"
+           id="rect56-9"
+           style="font-family:Arial, sans-serif" />
+        <text
+           x="291.58398"
+           y="562.42725"
+           fill="#ffffff"
+           font-size="12px"
+           font-weight="bold"
+           text-anchor="middle"
+           dominant-baseline="central"
+           id="text57-7"
+           style="font-family:Arial, sans-serif">LEDs</text>
+      </g>
+      <g
+         id="g91"
+         inkscape:label="7 Seg"
+         transform="translate(134.60828,1.7868356)">
+        <rect
+           x="255.09526"
+           y="545.13513"
+           width="73.317299"
+           height="32.753086"
+           rx="2.0947802"
+           fill="#6b6b2b"
+           stroke="#3b421e"
+           stroke-width="0.878561"
+           id="rect90"
+           style="font-family:Arial, sans-serif" />
+        <text
+           x="291.58398"
+           y="562.42725"
+           fill="#ffffff"
+           font-size="12px"
+           font-weight="bold"
+           text-anchor="middle"
+           dominant-baseline="central"
+           id="text90"
+           style="font-family:Arial, sans-serif">7 seg</text>
+      </g>
+      <g
+         id="g92"
+         inkscape:label="Buttons"
+         transform="translate(220.37639,1.7868356)">
+        <rect
+           x="255.09526"
+           y="545.13513"
+           width="73.317299"
+           height="32.753086"
+           rx="2.0947802"
+           fill="#6b6b2b"
+           stroke="#3b421e"
+           stroke-width="0.878561"
+           id="rect91"
+           style="font-family:Arial, sans-serif" />
+        <text
+           x="291.58398"
+           y="562.42725"
+           fill="#ffffff"
+           font-size="12px"
+           font-weight="bold"
+           text-anchor="middle"
+           dominant-baseline="central"
+           id="text91"
+           style="font-family:Arial, sans-serif">Buttons</text>
+      </g>
+    </g>
+    <g
+       id="g61"
+       inkscape:label="SPI Slave"
+       style="font-family:Arial, sans-serif"
+       transform="translate(4.7211687,-9.6324569)">
+      <rect
+         x="620"
+         y="520"
+         width="140"
+         height="50"
+         rx="4"
+         fill="#6b6b2b"
+         stroke="#3b421e"
+         stroke-width="1.5"
+         id="rect56" />
+      <text
+         x="690"
+         y="539"
+         fill="#ffffff"
+         font-size="12px"
+         font-weight="bold"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text57">SPI Slave</text>
+      <text
+         x="690"
+         y="553"
+         fill="#ffffff"
+         font-size="10px"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text58">pochoco_spi_slave</text>
+    </g>
+    <g
+       id="g59"
+       transform="translate(4.7211687,-8.6901572)"
+       inkscape:label="Board Pins"
+       style="font-family:Arial, sans-serif">
+      <rect
+         x="292.49771"
+         y="600.12561"
+         width="467.37665"
+         height="29.748707"
+         rx="5.4985485"
+         fill="#3b421e"
+         stroke="#000000"
+         stroke-width="1.75129"
+         id="rect58" />
+      <text
+         x="526.03076"
+         y="615"
+         fill="#ffffff"
+         font-size="12px"
+         font-weight="bold"
+         text-anchor="middle"
+         dominant-baseline="central"
+         id="text59">Nandland Go Board Pins</text>
+    </g>
+    <g
+       fill="none"
+       stroke="#915f02"
+       stroke-width="1.5"
+       marker-end="url(#arrow)"
+       id="g30"
+       inkscape:label="Connections"
+       style="font-family:Arial, sans-serif"
+       transform="translate(4.7211687)">
+      <!-- IF Stage Routing -->
+      <path
+         d="m 110,135 0,23.43947"
+         id="path4"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="M 110,195 V 348.94858"
+         id="path5"
+         sodipodi:nodetypes="cc"
+         style="marker-end:url(#marker87)" />
+      <!-- PC to IMEM Addr -->
+      <path
+         d="M 110,205 H 213.43947"
+         id="path6"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <!-- PC to IF/ID -->
+      <path
+         d="M 110,245 V 230 H 45 V 120 h 18.439469"
+         id="path7"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="ccccc" />
+      <!-- Controller loopback -->
+      <path
+         d="M 157.21434,353.58799 V 225 h 56.22513"
+         id="path8"
+         sodipodi:nodetypes="ccc"
+         style="marker-end:url(#marker87)" />
+      <!-- IMEM Read Data to IF/ID -->
+      <!-- ID Stage Routing -->
+      <path
+         d="m 250,125 h 33.43947"
+         id="path9"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <!-- IF/ID to Decoder -->
+      <path
+         d="m 250,265 h 33.43947"
+         id="path10"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <!-- IF/ID to Reg File -->
+      <!-- Decoder to Operands -->
+      <path
+         d="m 390,112.5 h 24.16842"
+         id="path11"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="m 390,125 h 15 v 22.5 h 9.16842"
+         id="path12"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cccc" />
+      <path
+         d="m 390,137.5 h 8 v 45 h 16.16842"
+         id="path13"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cccc" />
+      <!-- Operands to ALU -->
+      <path
+         d="m 470,112.5 h 15 v 7.5 h 8.43947"
+         id="path14"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cccc" />
+      <path
+         d="m 470,147.5 h 15 V 135 h 8.43947"
+         id="path15"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cccc" />
+      <path
+         d="m 470,182.5 h 15 V 175 h 8.43947"
+         id="path16"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cccc" />
+      <path
+         d="m 390,245 h 94.59868 v -55 h 8.84079"
+         id="path17"
+         sodipodi:nodetypes="cccc"
+         style="marker-end:url(#marker87)" />
+      <!-- RegFile to ALU -->
+      <!-- ALU to LSU and WB Mux -->
+      <path
+         d="m 580,155 83.43435,0"
+         id="path18"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <!-- ALU to WB Mux -->
+      <path
+         d="m 600,155 0,53.52936"
+         id="path19"
+         sodipodi:nodetypes="cc"
+         style="marker-end:url(#marker87)" />
+      <!-- ALU to LSU (Address) -->
+      <!-- LSU to WB Mux -->
+      <path
+         d="m 640.9687,245.549 22.79584,0"
+         id="path20"
+         sodipodi:nodetypes="cc"
+         style="marker-end:url(#marker87)" />
+      <!-- LSU <-> DMEM Interfaces -->
+      <path
+         d="m 582.78904,288.36662 v 55.53649"
+         id="path21"
+         style="stroke-width:3;stroke-dasharray:none;marker-start:url(#Triangle);marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <!-- LSU Addr/WData to DMEM -->
+      <!-- DMEM RData to LSU -->
+      <!-- Writeback Loop -->
+      <path
+         d="m 710,190.42892 h 19.15267 l 0,111.68198 H 592.83325 c -5.67594,-2.27647 -12.0558,-3.1451 -20.44253,0 H 271.19854 V 285 h 12.6054"
+         id="path23"
+         sodipodi:nodetypes="cccccccc"
+         style="marker-end:url(#marker87)" />
+      <!-- SoC Peripherals Routing -->
+      <!-- IMEM to RAM -->
+      <!-- DMEM to Addr Dec -->
+      <path
+         d="M 489.93034,487.7798 H 217.59553"
+         id="path26"
+         sodipodi:nodetypes="cc" />
+      <!-- Addr Dec to RAM -->
+      <path
+         d="m 583.48038,473.91057 v 13.88218 H 428.78687 v 16.86938"
+         id="path27"
+         sodipodi:nodetypes="cccc"
+         style="marker-start:url(#marker87);marker-end:url(#marker87)" />
+      <!-- Addr Dec to Sys I/O -->
+      <path
+         d="M 583.93782,487.79275 H 690 v 16.37873"
+         id="path28"
+         sodipodi:nodetypes="ccc"
+         style="marker-end:url(#marker87)" />
+      <!-- Addr Dec to SPI Slave -->
+      <!-- IO to Pins -->
+      <path
+         d="m 512.1303,571.30176 v 13.59867"
+         id="path29"
+         sodipodi:nodetypes="cc"
+         style="marker-end:url(#marker87)" />
+      <path
+         d="m 690,560.36754 v 24.53289"
+         id="path30"
+         style="marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="m 135,397.47558 v 18.20238"
+         id="path90"
+         style="stroke-width:3;stroke-dasharray:none;marker-start:url(#Triangle);marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="m 426.36219,571.30176 v 13.59867"
+         id="path92"
+         sodipodi:nodetypes="cc"
+         style="marker-end:url(#marker87)" />
+      <path
+         d="m 341.78531,571.30176 v 13.59867"
+         id="path93"
+         sodipodi:nodetypes="cc"
+         style="marker-end:url(#marker87)" />
+      <path
+         d="m 579.54816,397.47558 v 18.20238"
+         id="path94"
+         style="stroke-width:3;stroke-dasharray:none;marker-start:url(#Triangle);marker-end:url(#marker87)"
+         sodipodi:nodetypes="cc" />
+    </g>
+  </g>
+  <!-- Core Outer Domain -->
+  <!-- Pipeline Stage Boundaries -->
+  <!-- ========================================== -->
+  <!-- ROUTING (Drawn first so it sits behind components) -->
+  <!-- ========================================== -->
+  <!-- Connection Branch Dots -->
+  <!-- ========================================== -->
+  <!-- COMPONENTS -->
+  <!-- ========================================== -->
+  <!-- IF Stage -->
+  <!-- IF/ID Register -->
+  <!-- ID Stage -->
+  <!-- Operands -->
+  <!-- ALU Polygon -->
+  <!-- Load Store Unit -->
+  <!-- Writeback Mux -->
+  <!-- ========================================== -->
+  <!-- BOUNDARY INTERFACES & PERIPHERALS -->
+  <!-- ========================================== -->
+  <!-- Interfaces on Core Boundary -->
+  <!-- Peripherals -->
+  <!-- External Pins -->
+</svg>

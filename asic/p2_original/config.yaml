@@ -1,0 +1,28 @@
+# Experimento 1: RTL del Proyecto 2 SIN cambios (envuelto en asic_top_p2.v).
+# NO es un diseno para implementar: sirve para reunir la evidencia de la
+# seccion 3.1 (que construcciones de FPGA rechaza o transforma el flujo ASIC).
+# Correr desde la raiz del repositorio:
+#   librelane asic/p2_original/config.yaml --to Yosys.Synthesis
+# y revisar runs/*/ *-verilator-lint/ y *-yosys-synthesis/ (logs y reports).
+
+DESIGN_NAME: asic_top
+PDK: gf180mcuD
+STD_CELL_LIBRARY: gf180mcu_fd_sc_mcu7t5v0
+VERILOG_FILES:
+  - dir::src/asic_top_p2.v
+  - dir::src/pochoco_soc.v
+  - dir::src/pochoco_ram.v
+  - dir::src/pochoco_periph.v
+  - dir::src/pochoco_spi_slave.v
+  - dir::src/espino_core/espino_alu.v
+  - dir::src/espino_core/espino_controller.v
+  - dir::src/espino_core/espino_core.v
+  - dir::src/espino_core/espino_decoder.v
+  - dir::src/espino_core/espino_id_stage.v
+  - dir::src/espino_core/espino_if_stage.v
+  - dir::src/espino_core/espino_load_store_unit.v
+  - dir::src/espino_core/espino_register_file.v
+CLOCK_PORT: clk_i
+CLOCK_PERIOD: 100
+# Para que el flujo no se detenga en el primer error de lint y llegue a Yosys
+ERROR_ON_LINTER_ERRORS: false
