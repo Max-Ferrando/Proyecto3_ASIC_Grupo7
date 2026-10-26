@@ -54,7 +54,7 @@ def main():
     ap.add_argument("config")
     ap.add_argument("var")
     ap.add_argument("values", nargs="+")
-    ap.add_argument("--librelane", default="librelane")
+    ap.add_argument("--librelane", default="librelane --pdk gf180mcuD")
     ap.add_argument("--extra", action="append", default=[])
     ap.add_argument("--solo-resumen", action="store_true")
     args = ap.parse_args()

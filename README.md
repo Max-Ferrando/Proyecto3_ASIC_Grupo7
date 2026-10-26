@@ -80,16 +80,16 @@ Equivale a `python3 tools/rvasm.py sw/game.s -D CLK_HZ=10000000 --rom-v ... --me
 ## Corrida final
 
 ```bash
-librelane --run-tag final asic/strategy_A/config.yaml       # o: make asic-A
+librelane --pdk gf180mcuD --run-tag final asic/strategy_A/config.yaml   # o: make asic-A
 python3 asic/scripts/metrics.py asic/strategy_A/runs/final  # resumen
-librelane --last-run --flow OpenInKLayout asic/strategy_A/config.yaml   # ver el layout
+librelane --pdk gf180mcuD --last-run --flow OpenInKLayout asic/strategy_A/config.yaml   # ver el layout
 ```
 
 ## Mapa de la entrega
 
 | Seccion | Comando | Donde quedan los datos |
 |---|---|---|
-| 3.1 | `librelane asic/p2_original/config.yaml --to Yosys.Synthesis` | `runs/*/*-verilator-lint/*.log`, `*-yosys-synthesis/*.log` |
+| 3.1 | `librelane --pdk gf180mcuD asic/p2_original/config.yaml --to Yosys.Synthesis` | `runs/*/*-verilator-lint/*.log`, `*-yosys-synthesis/*.log` |
 | 3.2 | `make asic-A`, `make asic-B` | `python3 asic/scripts/metrics.py asic/strategy_*/runs/final` |
 | 3.3 | `python3 asic/scripts/area_by_module.py asic/strategy_A/runs/final` | `*-yosys-synthesis/reports/stat.rpt`, `runs/final/area_by_module.rpt` |
 | 3.4 | `python3 asic/scripts/sweep.py asic/strategy_A/config.yaml CLOCK_PERIOD 100 50 35 25` | `asic/strategy_A/sweep_CLOCK_PERIOD.csv` |

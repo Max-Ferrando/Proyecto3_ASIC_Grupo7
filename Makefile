@@ -19,7 +19,7 @@
 
 PYTHON    ?= python3
 ASM       := $(PYTHON) tools/rvasm.py
-LIBRELANE ?= librelane
+LIBRELANE ?= librelane --pdk gf180mcuD
 
 # Frecuencia de reloj del macro ASIC: periodo T = 100 ns -> 10 MHz
 ASIC_CLK_HZ ?= 10000000
