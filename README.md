@@ -6,14 +6,31 @@ funcionando en la Go Board: las partes propias de cada tecnologia estan separada
 
 ## Versiones de la corrida final
 
-Completar con la salida de `asic/scripts/versions.sh` (dentro de `nix-shell`):
-
 | Herramienta | Version |
 |---|---|
-| LibreLane | 3.0.16 (`git checkout 3.0.16`) |
-| PDK | gf180mcuD, revision `________` (`ciel ls --pdk-family gf180mcu`) |
+| LibreLane | 3.0.16 (`git checkout 3.0.16`, entorno `nix-shell`) |
+| PDK | gf180mcuD, revision `54435919abffb937387ec956209f9cf5fd2dfbee` (2025.12.26, instalado por ciel) |
 | Biblioteca de celdas | gf180mcu_fd_sc_mcu7t5v0 |
-| Yosys / OpenROAD / Magic / Netgen / KLayout | `________` |
+| Yosys | 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf) |
+| OpenROAD | dcf36133a369abc8f3c5e5738cd4d82e4903c0e0 |
+| Magic | 8.3.623 |
+| Netgen | 1.5.316 |
+| KLayout | 0.30.7 |
+| Verilator | 5.044 |
+
+Se obtienen con `bash asic/scripts/versions.sh` dentro de `nix-shell`.
+
+## Resultados principales
+
+| Corrida | Die | Celdas | FFs | Setup WS lento | Hold WS lento | DRC / LVS / Antena |
+|---|---|---|---|---|---|---|
+| **Estrategia A, final** (T = 100 ns, U = 40 %) | 0,444 mm² | 213.569 µm² | 1.070 | +35,3 ns | +1,00 ns | 0 / 0 / 0 |
+| Estrategia B (`final_v3`) | 2,252 mm² | 1.347.150 µm² | 5.967 | +11,3 ns | +0,82 ns | 0 / 0 / 0 |
+| A optimizada (decoder registrado), T = 100 ns | 0,459 mm² | 221.256 µm² | | +41,1 ns | +0,98 ns | 0 / 0 / 0 |
+
+* Periodo minimo: A = 65 ns (15,4 MHz); A optimizada = 60 ns (16,7 MHz).
+* Area minima que completa el flujo: FP_CORE_UTIL = 62 % (die 0,291 mm²); con 70 % el ruteo detallado no converge.
+* Simulacion post-sintesis (A): ciclos medidos y salidas identicas al RTL.
 
 ## Estructura
 
@@ -63,6 +80,10 @@ librelane --smoke-test         # prueba la instalacion y baja el PDK gf180mcu
 
 Cada vez que se trabaje: `cd ~/librelane && nix-shell`, y luego `cd ~/proyecto3`.
 
+La estrategia B necesita mas memoria de la que WSL entrega por defecto. Crear
+`C:\Users\<usuario>\.wslconfig` con `[wsl2]`, `memory=5GB` y `swap=8GB`, ejecutar
+`wsl --shutdown` y correr B con `--jobs 2`.
+
 ## Regenerar el programa desde game.s
 
 ```bash
@@ -81,6 +102,7 @@ Equivale a `python3 tools/rvasm.py sw/game.s -D CLK_HZ=10000000 --rom-v ... --me
 
 ```bash
 librelane --pdk gf180mcuD --run-tag final asic/strategy_A/config.yaml   # o: make asic-A
+librelane --pdk gf180mcuD --jobs 2 --run-tag final_v3 asic/strategy_B/config.yaml   # B: --jobs 2 limita la RAM
 python3 asic/scripts/metrics.py asic/strategy_A/runs/final  # resumen
 librelane --pdk gf180mcuD --last-run --flow OpenInKLayout asic/strategy_A/config.yaml   # ver el layout
 ```
@@ -96,7 +118,7 @@ librelane --pdk gf180mcuD --last-run --flow OpenInKLayout asic/strategy_A/config
 | 3.4 | `python3 asic/scripts/crit_path.py asic/strategy_A/runs/final` | ruta critica con modulos |
 | 3.5 | `python3 asic/scripts/sweep.py asic/strategy_A/config.yaml FP_CORE_UTIL 40 55 70 85` | `sweep_FP_CORE_UTIL.csv` + `plot_sweep.py` |
 | 3.6 | `python3 asic/scripts/highlight_layout.py asic/strategy_A/runs/final` | `runs/final/layout_anotado.png` |
-| 3.7 | `make asic-sim` y `make asic-synth-sim`, luego `asic/scripts/sim.sh gl A <netlist>` | `sim/asic/out/` |
+| 3.7 | `asic/scripts/sim.sh rtl A`; `librelane --pdk gf180mcuD --run-tag synth asic/sim_A/config.yaml --to Yosys.Synthesis`; `asic/scripts/sim.sh gl A asic/sim_A/runs/synth/*-yosys-synthesis/asic_top.nl.v` | `sim/asic/out/` |
 
 
 ---

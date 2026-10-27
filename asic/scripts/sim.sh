@@ -34,9 +34,11 @@ case "$MODE" in
     ;;
   gl)
     [ -f "$NL" ] || { echo "uso: sim.sh gl A|B <netlist post-sintesis>"; exit 1; }
-    PDK_ROOT=${PDK_ROOT:-$HOME/.ciel}
-    VDIR=$(ls -d $PDK_ROOT/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/verilog 2>/dev/null | head -1)
-    [ -d "$VDIR" ] || { echo "No encontre los modelos Verilog del PDK en $PDK_ROOT"; exit 1; }
+    # Modelos Verilog de las celdas: se buscan en el PDK que instalo LibreLane
+    # (~/.ciel/ciel/gf180mcu/versions/<hash>/gf180mcuD/...) o en PDK_ROOT.
+    VDIR=$(find ${PDK_ROOT:-} $HOME/.ciel -type d -path "*gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/verilog" 2>/dev/null | head -1)
+    [ -d "$VDIR" ] || { echo "No encontre los modelos Verilog del PDK (gf180mcuD/.../verilog) en ~/.ciel"; exit 1; }
+    echo "Modelos de celdas: $VDIR"
     if [ -f $VDIR/gf180mcu_fd_sc_mcu7t5v0.v ]; then
       MODELS="$VDIR/gf180mcu_fd_sc_mcu7t5v0.v"
       [ -f $VDIR/primitives.v ] && MODELS="$VDIR/primitives.v $MODELS"
